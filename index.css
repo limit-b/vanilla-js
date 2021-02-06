@@ -1,5 +1,10 @@
-.form,
-.greetings {
+body {
+  color: #34495e;
+  background-color: #ecf0f1;
+}
+
+.greeting-form,
+.greeting-text {
   display: none;
 }
 
