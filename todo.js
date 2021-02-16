@@ -7,10 +7,21 @@ const TODOS_LS = 'toDos';
 // const FAS = 'fas',
 //   FAS_MINUS = 'fa-minus-circle';
 
-const toDos = [];
+let toDos = [];
 
 function saveToDos() {
   localStorage.setItem(TODOS_LS, JSON.stringify(toDos));
+}
+
+function deleteToDo(event) {
+  const btn = event.target;
+  const li = btn.parentNode;
+  toDoUL.removeChild(li);
+  const cleanToDos = toDos.filter(function (toDo) {
+    return toDo.tdoId !== parseInt(li.id);
+  });
+  toDos = cleanToDos;
+  saveToDos();
 }
 
 function paintToDo(text) {
@@ -22,6 +33,7 @@ function paintToDo(text) {
   //   delListBtnMinus.classList.add(FAS);
   //   delListBtnMinus.classList.add(FAS_MINUS);
   delListBtn.textContent = 'X';
+  delListBtn.addEventListener('click', deleteToDo);
   toDoSpan.textContent = text;
   //   delListBtn.appendChild(delListBtnMinus);
   toDoList.appendChild(delListBtn);
@@ -54,8 +66,8 @@ function loadToDos() {
 }
 
 function init() {
-  loadToDos();
   toDoForm.addEventListener('submit', handleSubmitToDo);
+  loadToDos();
 }
 
 init();
