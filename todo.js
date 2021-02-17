@@ -18,7 +18,7 @@ function deleteToDo(event) {
   const li = btn.parentNode;
   toDoUL.removeChild(li);
   const cleanToDos = toDos.filter(function (toDo) {
-    return toDo.tdoId !== parseInt(li.id);
+    return toDo.tdObjId !== parseInt(li.id);
   });
   toDos = cleanToDos;
   saveToDos();
@@ -41,8 +41,8 @@ function paintToDo(text) {
   toDoList.id = newId;
   toDoUL.appendChild(toDoList);
   const toDoObj = {
-    tdoText: text,
-    tdoId: newId,
+    tdObjText: text,
+    tdObjId: newId,
   };
   toDos.push(toDoObj);
   saveToDos();
@@ -60,7 +60,7 @@ function loadToDos() {
   if (loadedToDos !== null) {
     const parsedToDos = JSON.parse(loadedToDos);
     parsedToDos.forEach(function (toDo) {
-      paintToDo(toDo.tdoText);
+      paintToDo(toDo.tdObjText);
     });
   }
 }
