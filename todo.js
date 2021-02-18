@@ -1,8 +1,10 @@
 const toDoForm = document.querySelector('.js-todo-form'),
-  toDoInput = document.querySelector('.js-todo-form__input'),
+  toDoInput = toDoForm.querySelector('.js-todo-form__input'),
   toDoUL = document.querySelector('.js-todo-ul');
 
 const TODOS_LS = 'toDos';
+
+let idNumbers = 1;
 
 // const FAS = 'fas',
 //   FAS_MINUS = 'fa-minus-circle';
@@ -20,6 +22,14 @@ function deleteToDo(event) {
   const cleanToDos = toDos.filter(function (toDo) {
     return toDo.tdObjId !== parseInt(li.id);
   });
+  while (toDoUL.firstChild) {
+    toDoUL.removeChild(toDoUL.firstChild);
+  }
+  idNumbers = 1;
+  cleanToDos.forEach(function (toDo) {
+    toDo.tdObjId = idNumbers;
+    paintToDo(toDo.tdObjText);
+  });
   toDos = cleanToDos;
   saveToDos();
 }
@@ -28,7 +38,7 @@ function paintToDo(text) {
   const toDoList = document.createElement('li');
   const delListBtn = document.createElement('button');
   const toDoSpan = document.createElement('span');
-  const newId = toDos.length + 1;
+  const newId = idNumbers++;
   //   const delListBtnMinus = document.createElement('i');
   //   delListBtnMinus.classList.add(FAS);
   //   delListBtnMinus.classList.add(FAS_MINUS);
