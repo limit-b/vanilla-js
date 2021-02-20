@@ -6,8 +6,7 @@ const USER_LS = 'currentUser',
   SHOWING_CLASS = 'showing';
 
 function getSay() {
-  const greetingDate = new Date();
-  const greetingHours = greetingDate.getHours();
+  const greetingHours = getClockTime().hours;
   let greetingSay;
   if (greetingHours >= 6 && greetingHours < 12) {
     greetingSay = 'Good morning';

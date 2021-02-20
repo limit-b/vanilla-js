@@ -42,7 +42,7 @@ function paintToDo(text) {
   //   const delListBtnMinus = document.createElement('i');
   //   delListBtnMinus.classList.add(FAS);
   //   delListBtnMinus.classList.add(FAS_MINUS);
-  delListBtn.textContent = 'X';
+  delListBtn.textContent = '×';
   delListBtn.addEventListener('click', deleteToDo);
   toDoSpan.textContent = text;
   //   delListBtn.appendChild(delListBtnMinus);

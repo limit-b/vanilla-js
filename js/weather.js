@@ -16,7 +16,7 @@ function getWeather(lat, lon) {
     .then(function (json) {
       const temperature = Math.floor(json.main.temp);
       const place = json.name;
-      weatherSpan.textContent = `${temperature} @ ${place}`;
+      weatherSpan.textContent = `${temperature}℃ @ ${place}`;
     });
 }
 
@@ -51,6 +51,9 @@ function loadCoords() {
 
 function init() {
   loadCoords();
+  setTimeout(function () {
+    location.reload();
+  }, 1000 * 60 * 10);
 }
 
 init();

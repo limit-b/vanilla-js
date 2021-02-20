@@ -62,6 +62,10 @@ body {
   display: none;
 }
 
+.todo-ul {
+  list-style-type: none;
+}
+
 .showing {
   display: block;
 }
