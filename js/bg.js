@@ -12,6 +12,13 @@ function genRandom() {
   return number;
 }
 
+function paintImageTest(imgNumber) {
+  const bgImageDiv = document.createElement('div');
+  bgImageDiv.style.backgroundImage = `url("images/${imgNumber}.jpg")`;
+  bgImageDiv.classList.add(BG_IMAGE_CLASS);
+  body.prepend(bgImageDiv);
+}
+
 function paintImage(imgNumber) {
   const bgImage = new Image();
   bgImage.src = `images/${imgNumber}.jpg`;
@@ -22,7 +29,7 @@ function paintImage(imgNumber) {
 
 function init() {
   const randomNumber = genRandom();
-  paintImage(randomNumber);
+  paintImageTest(randomNumber);
 }
 
 init();
