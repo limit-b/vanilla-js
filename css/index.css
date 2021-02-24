@@ -31,8 +31,15 @@ body {
   animation: fadeIn 1.2s linear forwards;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .clock {
-  margin: 100px auto 50px auto;
+  margin: 50px auto;
 }
 
 .clock__text {
@@ -44,10 +51,37 @@ body {
   display: none;
 }
 
+.todo-form__input {
+  width: 200px;
+  padding: 10px 0px;
+  color: white;
+  text-align: center;
+  background: none;
+  border: none;
+  border-bottom: 1px solid white;
+}
+
+.todo-form__input::placeholder {
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  opacity: 0.3;
+}
+
 .todo-ul {
+  width: 240px;
   list-style-type: none;
+}
+
+.todo-ul li {
+  margin: 10px auto;
 }
 
 .showing {
   display: block;
+}
+
+.greeting-text.showing {
+  margin-bottom: 10px;
+  font-size: 30px;
 }
