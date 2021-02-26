@@ -53,7 +53,7 @@ function init() {
   loadCoords();
   setTimeout(function () {
     location.reload();
-  }, 1000 * 60 * 10);
+  }, 1000 * 60 * 5);
 }
 
 init();
