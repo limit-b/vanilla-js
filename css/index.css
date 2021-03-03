@@ -14,7 +14,7 @@ body {
     opacity: 0;
   }
   to {
-    opacity: 0.8;
+    opacity: 0.6;
   }
 }
 
@@ -52,8 +52,9 @@ main {
 }
 
 .todo-form__input {
-  width: 200px;
+  width: 240px;
   padding: 10px 0px;
+  font-size: 20px;
   color: white;
   text-align: center;
   background: none;
@@ -62,14 +63,13 @@ main {
 }
 
 .todo-form__input::placeholder {
-  font-size: 16px;
+  font-size: 20px;
   color: white;
   text-align: center;
-  opacity: 0.3;
 }
 
 .todo-ul {
-  width: 240px;
+  width: 280px;
   list-style-type: none;
 }
 
@@ -81,11 +81,15 @@ main {
   margin-right: 10px;
 }
 
+.todo-ul li span {
+  font-size: 20px;
+}
+
 .showing {
   display: block;
 }
 
 .greeting-text.showing {
   margin-bottom: 10px;
-  font-size: 30px;
+  font-size: 50px;
 }
