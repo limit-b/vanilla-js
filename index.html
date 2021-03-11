@@ -8,6 +8,14 @@
     <link rel="stylesheet" href="css/index.css" />
   </head>
   <body>
+    <div class="js-side side move-hidden">
+      <button class="js-side__button side__button">open</button>
+      <div class="side__div">
+        <iframe
+          src="https://javascriptweekly.com/issues/latest?layout=bare"
+        ></iframe>
+      </div>
+    </div>
     <main>
       <div class="js-clock clock">
         <span class="js-clock__text clock__text">00:00:00</span>
@@ -35,6 +43,7 @@
       crossorigin="anonymous"
     ></script> -->
     <script src="js/bg.js"></script>
+    <script src="js/side.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/greeting.js"></script>
     <script src="js/todo.js"></script>
