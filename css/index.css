@@ -39,12 +39,14 @@ body {
   height: 99.8%;
 }
 
-.side .side__button {
+.side__button {
   height: 30px;
   padding: 0px 10px;
+  font-size: 16px;
+  text-transform: uppercase;
 }
 
-.side .side__div {
+.side__div {
   display: flex;
   align-items: center;
   height: 99.8%;
@@ -76,6 +78,23 @@ main {
 .greeting-form,
 .greeting-text {
   display: none;
+}
+
+.greeting-form__input {
+  width: 240px;
+  padding: 10px 0px;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  background: none;
+  border: none;
+  border-bottom: 1px solid white;
+}
+
+.greeting-form__input::placeholder {
+  font-size: 20px;
+  color: white;
+  text-align: center;
 }
 
 .todo-form__input {
@@ -122,7 +141,6 @@ main {
 }
 
 .greeting-text.showing {
-  margin-bottom: 10px;
   font-size: 50px;
 }
 
