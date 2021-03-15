@@ -16,12 +16,13 @@ function saveToDos() {
 }
 
 function deleteToDo(event) {
-  const btn = event.target;
-  const li = btn.parentNode;
+  const btn = event.target,
+    li = btn.parentNode;
   toDoUL.removeChild(li);
   const cleanToDos = toDos.filter(function (toDo) {
     return toDo.tdObjId !== parseInt(li.id);
   });
+  //
   while (toDoUL.firstChild) {
     toDoUL.removeChild(toDoUL.firstChild);
   }
@@ -30,14 +31,15 @@ function deleteToDo(event) {
     toDo.tdObjId = idNumbers;
     paintToDo(toDo.tdObjText);
   });
+  //
   toDos = cleanToDos;
   saveToDos();
 }
 
 function paintToDo(text) {
-  const toDoList = document.createElement('li');
-  const delListBtn = document.createElement('button');
-  const toDoSpan = document.createElement('span');
+  const toDoList = document.createElement('li'),
+    delListBtn = document.createElement('button'),
+    toDoSpan = document.createElement('span');
   const newId = idNumbers++;
   //   const delListBtnMinus = document.createElement('i');
   //   delListBtnMinus.classList.add(FAS);
