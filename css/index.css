@@ -43,7 +43,10 @@ body {
   height: 30px;
   padding: 0px 10px;
   font-size: 16px;
+  color: white;
   text-transform: uppercase;
+  background-color: black;
+  border-style: none;
 }
 
 .side__div {
